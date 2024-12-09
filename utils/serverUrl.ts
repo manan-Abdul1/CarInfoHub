@@ -11,4 +11,4 @@ export const CLOUDNIARY_IMG_URL = "https://api.cloudinary.com/v1_1/dipdjdhic/ima
 // CAR ROUTES
 export const CREATE_NEW_CAR = `${API_SERVER_BASE_URL}/api/car`;
 export const GET_CARS_BY_USER_ID = `${API_SERVER_BASE_URL}/api/car/user`;
-export const DELETE_CAR_BY_USER_ID = `${API_SERVER_BASE_URL}/api/car`;
+export const DELETE_CAR = `${API_SERVER_BASE_URL}/api/car`;

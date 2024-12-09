@@ -52,7 +52,7 @@ const LoginForm = () => {
         try {
             const data = await loginUser(values.email, values.password);
             if (data.ok) {
-                localStorage.setItem('user', data.user)
+                localStorage.setItem('user', JSON.stringify(data.user))
                 router.push("/dashboard");
             } else {
                 setError(data.message || "Login failed. Please try again.");
