@@ -34,6 +34,12 @@ const Dashboard = () => {
 
     const handleOpenModal = () => setOpenForm(true);
     const handleCloseModal = () => setOpenForm(false);
+
+    const handleLogout = () => {
+        localStorage.removeItem("user");
+        router.push("/");
+    };
+
     const fetchCars = async () => {
         setLoading(true);
         setError(null);
@@ -125,19 +131,18 @@ const Dashboard = () => {
 
     return (
         <StyledContainer>
-            <AddCarButton
-                onClick={handleOpenModal}
-                variant="contained"
-                color="primary"
-                sx={{
-                    marginRight: "20px",
-                    marginBottom: "20px",
-                    marginTop: "20px",
-                    marginLeft: "auto",
-                }}
-            >
-                Add Car
-            </AddCarButton>
+            <Box sx={{ display: "flex", width: "80%", margin:'30px', justifyContent: "space-between" }}>
+                <Button onClick={handleLogout} variant="contained" color="secondary">
+                    Logout
+                </Button>
+                <AddCarButton
+                    onClick={handleOpenModal}
+                    variant="contained"
+                    color="primary"
+                >
+                    Add Car
+                </AddCarButton>
+            </Box>
 
             {loading ? (
                 <Loader />
