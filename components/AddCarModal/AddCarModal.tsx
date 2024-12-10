@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import { Modal, Box, TextField, Button, InputAdornment } from "@mui/material";
 import tw from "tailwind-styled-components";
 import { carValidationSchema } from "@/validators/carValidation";
@@ -19,6 +19,8 @@ const ModalContainer = tw(Box)`
   transform
   -translate-x-1/2
   -translate-y-1/2
+  max-h-[90vh] 
+  overflow-y-auto 
 `;
 
 const CloseButton = tw.div`
@@ -74,6 +76,8 @@ const AddCarModal: React.FC<AddCarModalProps> = ({
                 city: values.city,
             });
             onClose();
+            formik.resetForm();
+            setImageUrls([]);
         },
     });
 

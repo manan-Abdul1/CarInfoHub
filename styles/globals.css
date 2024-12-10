@@ -25,3 +25,12 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+
+.slick-dots {
+  bottom: -15px !important;
+}
+
+.slick-prev,
+.slick-next {
+  display: none !important;
+}
