@@ -1,7 +1,7 @@
 import * as yup from 'yup';
 
 export const carValidationSchema = yup.object({
-    model: yup.string()
+    carModel: yup.string()
       .min(3, "Car model must be at least 3 characters")
       .required("Car model is required"),
     city: yup.string()
